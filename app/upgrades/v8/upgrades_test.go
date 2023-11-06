@@ -13,17 +13,17 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/evmos/evmos/v12/crypto/ethsecp256k1"
-	feemarkettypes "github.com/evmos/evmos/v12/x/feemarket/types"
+	"github.com/itxnetwork/itx/v12/crypto/ethsecp256k1"
+	feemarkettypes "github.com/itxnetwork/itx/v12/x/feemarket/types"
 
-	"github.com/evmos/evmos/v12/app"
+	"github.com/itxnetwork/itx/v12/app"
 )
 
 type UpgradeTestSuite struct {
 	suite.Suite
 
 	ctx         sdk.Context
-	app         *app.Evmos
+	app         *app.Itx
 	consAddress sdk.ConsAddress
 }
 

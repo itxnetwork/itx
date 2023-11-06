@@ -7,7 +7,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/evmos/evmos/v12/x/claims/types"
+	"github.com/itxnetwork/itx/v12/x/claims/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -75,7 +75,7 @@ func TestParamsValidate(t *testing.T) {
 			types.Params{
 				DurationOfDecay:    types.DefaultDurationOfDecay,
 				DurationUntilDecay: types.DefaultDurationUntilDecay,
-				ClaimsDenom:        "tevmos",
+				ClaimsDenom:        "titx",
 				AuthorizedChannels: types.DefaultAuthorizedChannels,
 				EVMChannels:        types.DefaultEVMChannels,
 			},
@@ -85,7 +85,7 @@ func TestParamsValidate(t *testing.T) {
 			"success - constructor",
 			types.NewParams(
 				true,
-				"tevmos",
+				"titx",
 				time.Unix(0, 0),
 				types.DefaultDurationOfDecay,
 				types.DefaultDurationUntilDecay,
@@ -140,7 +140,7 @@ func TestParamsvalidateDuration(t *testing.T) {
 }
 
 func TestParamsValidateDenom(t *testing.T) {
-	err := validateDenom("aevmos")
+	err := validateDenom("uitx")
 	require.NoError(t, err)
 	err = validateDenom(false)
 	require.Error(t, err)
