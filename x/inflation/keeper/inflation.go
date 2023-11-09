@@ -186,3 +186,45 @@ func (k Keeper) BondedRatio(ctx sdk.Context) sdk.Dec {
 
 	return sdk.NewDecFromInt(k.stakingKeeper.TotalBondedTokens(ctx)).QuoInt(stakeSupply)
 }
+
+// GetCirculatingSupply returns the bank supply of the mintDenom excluding the
+// team allocation in the first year
+func (k Keeper) GetCirculatingSupply(ctx sdk.Context, mintDenom string) sdk.Dec {
+	circulatingSupply := sdk.NewDecFromInt(k.bankKeeper.GetSupply(ctx, mintDenom).Amount)
+	teamAllocation := sdk.NewDecFromInt(teamAlloc)
+	// Consider team allocation only on mainnet chain id
+	if utils.IsMainnet(ctx.ChainID()) {
+		circulatingSupply = circulatingSupply.Sub(teamAllocation)
+	}
+	return circulatingSupply
+}
+
+// GetInflationRate returns the inflation rate for the current period.
+func (k Keeper) GetInflationRate(ctx sdk.Context, mintDenom string) sdk.Dec {
+	epp := k.GetEpochsPerPeriod(ctx)
+	if epp == 0 {
+		return sdk.ZeroDec()
+	}
+	epochMintProvision := k.GetEpochMintProvision(ctx)
+	if epochMintProvision.IsZero() {
+		return sdk.ZeroDec()
+	}
+	epochsPerPeriod := sdk.NewDec(epp)
+	circulatingSupply := k.GetCirculatingSupply(ctx, mintDenom)
+	if circulatingSupply.IsZero() {
+		return sdk.ZeroDec()
+	}
+	// EpochMintProvision * 365 / circulatingSupply * 100
+	return epochMintProvision.Mul(epochsPerPeriod).Quo(circulatingSupply).Mul(sdk.NewDec(100))
+}
+
+// GetEpochMintProvision retrieves necessary params KV storage
+// and calculate EpochMintProvision
+func (k Keeper) GetEpochMintProvision(ctx sdk.Context) sdk.Dec {
+	return types.CalculateEpochMintProvision(
+		k.GetParams(ctx),
+		k.GetPeriod(ctx),
+		k.GetEpochsPerPeriod(ctx),
+		k.BondedRatio(ctx),
+	)
+}

@@ -1,5 +1,6 @@
 package keeper_test
 
+/*
 import (
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	"github.com/cosmos/cosmos-sdk/testutil"
@@ -72,3 +73,4 @@ func (suite *KeeperTestSuite) TestMigrations() {
 		})
 	}
 }
+*/

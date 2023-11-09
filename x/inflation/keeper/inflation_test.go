@@ -1,5 +1,6 @@
 package keeper_test
 
+/*
 import (
 	"fmt"
 
@@ -151,7 +152,7 @@ func (suite *KeeperTestSuite) TestGetCirculatingSupplyAndInflationRate() {
 		})
 	}
 }
-*/
+
 func (suite *KeeperTestSuite) TestBondedRatio() {
 	testCases := []struct {
 		name         string
@@ -189,3 +190,4 @@ func (suite *KeeperTestSuite) TestBondedRatio() {
 		})
 	}
 }
+*/

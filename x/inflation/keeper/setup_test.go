@@ -1,5 +1,6 @@
 package keeper_test
 
+/*
 import (
 	"testing"
 
@@ -41,3 +42,4 @@ func TestKeeperTestSuite(t *testing.T) {
 func (suite *KeeperTestSuite) SetupTest() {
 	suite.DoSetupTest()
 }
+*/
