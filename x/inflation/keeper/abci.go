@@ -27,11 +27,15 @@ import (
 // process the clawback of unclaimed tokens
 func (k Keeper) EndBlocker(ctx sdk.Context) {
 	params := k.GetParams(ctx)
+	logger := k.Logger(ctx)
 
 	mintedCoin := sdk.Coin{
 		Denom:  params.MintDenom,
 		Amount: k.GetMintAmount(ctx, ctx.BlockHeight()),
 	}
+
+	logger.Info("Inflation", "mint amount", mintedCoin.Amount)
+	logger.Info("Inflation", "mint denom", mintedCoin.Denom)
 
 	staking, incentives, communityPool, err := k.MintAndAllocateInflation(ctx, mintedCoin, params)
 	if err != nil {
