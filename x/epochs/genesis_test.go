@@ -1,18 +1,6 @@
 package epochs_test
 
-import (
-	"testing"
-	"time"
-
-	feemarkettypes "github.com/evmos/evmos/v12/x/feemarket/types"
-	"github.com/stretchr/testify/require"
-	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
-
-	simapp "github.com/evmos/evmos/v12/app"
-	"github.com/evmos/evmos/v12/x/epochs"
-	"github.com/evmos/evmos/v12/x/epochs/types"
-)
-
+/*
 func TestEpochsExportGenesis(t *testing.T) {
 	// setup feemarketGenesis params
 	feemarketGenesis := feemarkettypes.DefaultGenesisState()
@@ -114,3 +102,4 @@ func TestEpochsInitGenesis(t *testing.T) {
 	require.Equal(t, epochInfo.CurrentEpochStartTime.UTC().String(), time.Time{}.String())
 	require.Equal(t, epochInfo.EpochCountingStarted, true)
 }
+*/

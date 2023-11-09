@@ -16,6 +16,7 @@
 
 package keeper
 
+/*
 import (
 	"context"
 
@@ -95,3 +96,4 @@ func (k Keeper) Params(
 	params := k.GetParams(ctx)
 	return &types.QueryParamsResponse{Params: params}, nil
 }
+*/

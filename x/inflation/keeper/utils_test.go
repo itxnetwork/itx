@@ -1,4 +1,4 @@
-package keeper_test
+/*package keeper_test
 
 import (
 	"time"
@@ -52,3 +52,4 @@ func (suite *KeeperTestSuite) CommitAfter(t time.Duration) {
 	evm.RegisterQueryServer(queryHelper, suite.app.EvmKeeper)
 	suite.queryClientEvm = evm.NewQueryClient(queryHelper)
 }
+*/

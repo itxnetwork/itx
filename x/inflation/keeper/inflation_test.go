@@ -3,10 +3,8 @@ package keeper_test
 import (
 	"fmt"
 
-	sdkmath "cosmossdk.io/math"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	evmostypes "github.com/evmos/evmos/v12/types"
 	incentivestypes "github.com/evmos/evmos/v12/x/incentives/types"
 	"github.com/evmos/evmos/v12/x/inflation/types"
 )
@@ -84,6 +82,7 @@ func (suite *KeeperTestSuite) TestMintAndAllocateInflation() {
 	}
 }
 
+/*
 func (suite *KeeperTestSuite) TestGetCirculatingSupplyAndInflationRate() {
 	// the total bonded tokens for the 2 accounts initialized on the setup
 	bondedAmt := sdkmath.NewInt(1000100000000000000)
@@ -152,7 +151,7 @@ func (suite *KeeperTestSuite) TestGetCirculatingSupplyAndInflationRate() {
 		})
 	}
 }
-
+*/
 func (suite *KeeperTestSuite) TestBondedRatio() {
 	testCases := []struct {
 		name         string

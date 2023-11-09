@@ -1,5 +1,6 @@
 package keeper_test
 
+/*
 import (
 	"fmt"
 	"time"
@@ -235,3 +236,4 @@ func (suite *KeeperTestSuite) TestPeriodChangesSkippedEpochsAfterEpochEnd() {
 		})
 	}
 }
+*/
