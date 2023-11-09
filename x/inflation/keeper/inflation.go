@@ -17,8 +17,9 @@
 package keeper
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"math/big"
 
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	evmostypes "github.com/evmos/evmos/v12/types"
 
 	utils "github.com/evmos/evmos/v12/utils"
@@ -28,6 +29,44 @@ import (
 
 // 200M token at year 4 allocated to the team
 var teamAlloc = sdk.NewInt(200_000_000).Mul(evmostypes.PowerReduction)
+
+// retrieve the fixed amount to mint per block.
+func (k Keeper) GetMintAmount(ctx sdk.Context, currentBlockHeight int64) sdk.Int {
+
+	// TODO read values from parameters
+
+	// Retrieve the start block height from parameters
+	startBlock := int64(1) // k.GetStartBlock()
+
+	// number of blocks represent a four-year period
+	// seconds in year / block time in seconds
+	// (365.25 * 24 * 3600) / 5
+	blocksPerHalving := int64(6311520)
+
+	// Calculate the number of halvings that have occurred.
+	halvings := (currentBlockHeight - startBlock) / blocksPerHalving
+
+	// Start with the initial mint amount and halve it for each halving period that has passed.
+
+	// Create a big.Int representing 10^18
+	bigTenToTheEighteenth := new(big.Int).Exp(big.NewInt(10), big.NewInt(18), nil)
+
+	// Initialize a new sdk.Int with 10^18
+	tenToTheEighteenth := sdk.NewIntFromBigInt(bigTenToTheEighteenth)
+
+	// TODO Initial mint amount to be set in the parameters.
+	mintAmount := tenToTheEighteenth
+
+	for i := int64(0); i < halvings; i++ {
+		mintAmount = mintAmount.Quo(sdk.NewInt(2)) // Halve the mint amount.
+		if mintAmount.IsZero() {
+			// Once the mint amount reaches zero, stop minting new tokens.
+			return sdk.ZeroInt()
+		}
+	}
+
+	return mintAmount
+}
 
 // MintAndAllocateInflation performs inflation minting and allocation
 func (k Keeper) MintAndAllocateInflation(
@@ -146,52 +185,4 @@ func (k Keeper) BondedRatio(ctx sdk.Context) sdk.Dec {
 	}
 
 	return sdk.NewDecFromInt(k.stakingKeeper.TotalBondedTokens(ctx)).QuoInt(stakeSupply)
-}
-
-// GetCirculatingSupply returns the bank supply of the mintDenom excluding the
-// team allocation in the first year
-func (k Keeper) GetCirculatingSupply(ctx sdk.Context, mintDenom string) sdk.Dec {
-	circulatingSupply := sdk.NewDecFromInt(k.bankKeeper.GetSupply(ctx, mintDenom).Amount)
-	teamAllocation := sdk.NewDecFromInt(teamAlloc)
-
-	// Consider team allocation only on mainnet chain id
-	if utils.IsMainnet(ctx.ChainID()) {
-		circulatingSupply = circulatingSupply.Sub(teamAllocation)
-	}
-
-	return circulatingSupply
-}
-
-// GetInflationRate returns the inflation rate for the current period.
-func (k Keeper) GetInflationRate(ctx sdk.Context, mintDenom string) sdk.Dec {
-	epp := k.GetEpochsPerPeriod(ctx)
-	if epp == 0 {
-		return sdk.ZeroDec()
-	}
-
-	epochMintProvision := k.GetEpochMintProvision(ctx)
-	if epochMintProvision.IsZero() {
-		return sdk.ZeroDec()
-	}
-
-	epochsPerPeriod := sdk.NewDec(epp)
-
-	circulatingSupply := k.GetCirculatingSupply(ctx, mintDenom)
-	if circulatingSupply.IsZero() {
-		return sdk.ZeroDec()
-	}
-
-	// EpochMintProvision * 365 / circulatingSupply * 100
-	return epochMintProvision.Mul(epochsPerPeriod).Quo(circulatingSupply).Mul(sdk.NewDec(100))
-}
-
-// GetEpochMintProvision retrieves necessary params KV storage
-// and calculate EpochMintProvision
-func (k Keeper) GetEpochMintProvision(ctx sdk.Context) sdk.Dec {
-	return types.CalculateEpochMintProvision(
-		k.GetParams(ctx),
-		k.GetPeriod(ctx),
-		k.GetEpochsPerPeriod(ctx),
-		k.BondedRatio(ctx),
-	)
 }
