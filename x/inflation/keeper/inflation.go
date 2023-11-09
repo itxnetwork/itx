@@ -41,7 +41,10 @@ func (k Keeper) GetMintAmount(ctx sdk.Context, currentBlockHeight int64) sdk.Int
 	// number of blocks represent a four-year period
 	// seconds in year / block time in seconds
 	// (365.25 * 24 * 3600) / 5
-	blocksPerHalving := int64(6311520)
+	// blocksPerHalving := int64(6311520)
+
+	// test to see it in action
+	blocksPerHalving := int64(2)
 
 	// Calculate the number of halvings that have occurred.
 	halvings := (currentBlockHeight - startBlock) / blocksPerHalving
