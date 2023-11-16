@@ -34,9 +34,9 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/itxnetwork/itxitx/v12/x/erc20/client/cli"
-	"github.com/itxnetwork/itxitx/v12/x/erc20/keeper"
-	"github.com/itxnetwork/itxitx/v12/x/erc20/types"
+	"github.com/itxnetwork/itx/v12/x/erc20/client/cli"
+	"github.com/itxnetwork/itx/v12/x/erc20/keeper"
+	"github.com/itxnetwork/itx/v12/x/erc20/types"
 )
 
 // type check to ensure the interface is properly implemented

@@ -11,8 +11,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/itxnetwork/itx/v12/crypto/ethsecp256k1"
-	"github.com/itxnetwork/itxitx/v12/testutil"
-	utiltx "github.com/itxnetwork/itxitx/v12/testutil/tx"
+	"github.com/itxnetwork/itx/v12/testutil"
+	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
 
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 )

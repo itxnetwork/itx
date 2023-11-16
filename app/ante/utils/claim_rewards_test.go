@@ -5,9 +5,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	anteutils "github.com/itxnetwork/itx/v12/app/ante/utils"
-	"github.com/itxnetwork/itxitx/v12/testutil"
-	testutiltx "github.com/itxnetwork/itxitx/v12/testutil/tx"
-	"github.com/itxnetwork/itxitx/v12/utils"
+	"github.com/itxnetwork/itx/v12/testutil"
+	testutiltx "github.com/itxnetwork/itx/v12/testutil/tx"
+	"github.com/itxnetwork/itx/v12/utils"
 )
 
 // TestClaimStakingRewardsIfNecessary tests the ClaimStakingRewardsIfNecessary function

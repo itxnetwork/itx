@@ -22,7 +22,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/server"
-	"github.com/itxnetwork/itxitx/v12/indexer"
+	"github.com/itxnetwork/itx/v12/indexer"
 	tmnode "github.com/tendermint/tendermint/node"
 	sm "github.com/tendermint/tendermint/state"
 	tmstore "github.com/tendermint/tendermint/store"

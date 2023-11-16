@@ -11,8 +11,8 @@ import (
 
 	evm "github.com/itxnetwork/itx/v12/x/evm/types"
 
-	"github.com/itxnetwork/itxitx/v12/app"
-	"github.com/itxnetwork/itxitx/v12/x/inflation/types"
+	"github.com/itxnetwork/itx/v12/app"
+	"github.com/itxnetwork/itx/v12/x/inflation/types"
 )
 
 var denomMint = types.DefaultInflationDenom

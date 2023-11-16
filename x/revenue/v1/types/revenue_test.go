@@ -8,7 +8,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 
 	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
-	"github.com/itxnetwork/itxitx/v12/x/revenue/v1/types"
+	"github.com/itxnetwork/itx/v12/x/revenue/v1/types"
 
 	"github.com/stretchr/testify/suite"
 )

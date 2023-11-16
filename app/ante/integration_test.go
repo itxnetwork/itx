@@ -11,9 +11,9 @@ import (
 	. "github.com/onsi/gomega"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/itxnetwork/itxitx/v12/crypto/ethsecp256k1"
-	"github.com/itxnetwork/itxitx/v12/testutil"
-	"github.com/itxnetwork/itxitx/v12/utils"
+	"github.com/itxnetwork/itx/v12/crypto/ethsecp256k1"
+	"github.com/itxnetwork/itx/v12/testutil"
+	"github.com/itxnetwork/itx/v12/utils"
 )
 
 var _ = Describe("when sending a Cosmos transaction", func() {

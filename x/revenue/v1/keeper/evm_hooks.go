@@ -23,9 +23,9 @@ import (
 	"github.com/ethereum/go-ethereum/core"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 
-	evmtypes "github.com/itxnetwork/itxitx/v12/x/evm/types"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
 
-	"github.com/itxnetwork/itxitx/v12/x/revenue/v1/types"
+	"github.com/itxnetwork/itx/v12/x/revenue/v1/types"
 )
 
 var _ evmtypes.EvmHooks = Hooks{}

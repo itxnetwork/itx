@@ -64,13 +64,13 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/itxnetwork/itxitx/v12/app"
-	"github.com/itxnetwork/itxitx/v12/crypto/hd"
+	"github.com/itxnetwork/itx/v12/app"
+	"github.com/itxnetwork/itx/v12/crypto/hd"
 
-	"github.com/itxnetwork/itxitx/v12/encoding"
-	"github.com/itxnetwork/itxitx/v12/server/config"
-	itxtypes "github.com/itxnetwork/itxitx/v12/types"
-	evmtypes "github.com/itxnetwork/itxitx/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/encoding"
+	"github.com/itxnetwork/itx/v12/server/config"
+	itxtypes "github.com/itxnetwork/itx/v12/types"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
 )
 
 // package-wide network lock to only allow one test network at a time

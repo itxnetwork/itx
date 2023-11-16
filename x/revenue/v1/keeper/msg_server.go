@@ -27,7 +27,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 
-	"github.com/itxnetwork/itxitx/v12/x/revenue/v1/types"
+	"github.com/itxnetwork/itx/v12/x/revenue/v1/types"
 )
 
 var _ types.MsgServer = &Keeper{}

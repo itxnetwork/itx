@@ -18,7 +18,7 @@ package types
 import (
 	"fmt"
 
-	"github.com/itxnetwork/itxitx/v12/types"
+	"github.com/itxnetwork/itx/v12/types"
 )
 
 // Validate performs a basic validation of a GenesisAccount fields.

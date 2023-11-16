@@ -7,7 +7,7 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
 	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
-	"github.com/itxnetwork/itxitx/v12/x/erc20/types"
+	"github.com/itxnetwork/itx/v12/x/erc20/types"
 )
 
 func (suite *KeeperTestSuite) TestMintingEnabled() {

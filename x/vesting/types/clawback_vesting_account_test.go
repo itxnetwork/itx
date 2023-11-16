@@ -12,7 +12,7 @@ import (
 	sdkvesting "github.com/cosmos/cosmos-sdk/x/auth/vesting/types"
 
 	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
-	"github.com/itxnetwork/itxitx/v12/x/vesting/types"
+	"github.com/itxnetwork/itx/v12/x/vesting/types"
 )
 
 var (

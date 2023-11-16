@@ -13,12 +13,12 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/itxnetwork/itx/v12/crypto/ethsecp256k1"
-	"github.com/itxnetwork/itxitx/v12/testutil"
-	utiltx "github.com/itxnetwork/itxitx/v12/testutil/tx"
-	itxtypes "github.com/itxnetwork/itxitx/v12/types"
-	inflationtypes "github.com/itxnetwork/itxitx/v12/x/inflation/types"
+	"github.com/itxnetwork/itx/v12/testutil"
+	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
+	itxtypes "github.com/itxnetwork/itx/v12/types"
+	inflationtypes "github.com/itxnetwork/itx/v12/x/inflation/types"
 
-	"github.com/itxnetwork/itxitx/v12/x/claims/types"
+	"github.com/itxnetwork/itx/v12/x/claims/types"
 )
 
 func (suite *KeeperTestSuite) TestGetClaimableAmountForAction() {

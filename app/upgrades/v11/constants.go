@@ -20,7 +20,7 @@ const (
 	// UpgradeName is the shared upgrade plan name for mainnet
 	UpgradeName = "v11.0.0"
 	// UpgradeInfo defines the binaries that will be used for the upgrade
-	UpgradeInfo = `'{"binaries":{"darwin/arm64":"https://github.com/itxnetwork/itxitx/releases/download/v11.0.0/itx_11.0.0_Darwin_arm64.tar.gz","darwin/amd64":"httpsgithub.com/itxnetwork/itxrk/itx/releases/download/v11.0.0/itx_11.0.0_Darwin_amd64.tar.gz","linux/arm64":"htgithub.com/itxnetwork/itxtwork/itx/releases/download/v11.0.0/itx_11.0.0_Linux_arm64.tar.gz","linux/amd64":github.com/itxnetwork/itxxnetwork/itx/releases/download/v11.0.0/itx_11.0.0_Linux_amd64.tar.gz","windows/x86_6github.com/itxnetwork/itx/itxnetwork/itx/releases/download/v11.0.0/itx_11.0.0_Windows_x86_64.zip"}}'`
+	UpgradeInfo = `'{"binaries":{"darwin/arm64":"https://github.com/itxnetwork/itx/releases/download/v11.0.0/itx_11.0.0_Darwin_arm64.tar.gz","darwin/amd64":"httpsgithub.com/itxnetwork/itxrk/itx/releases/download/v11.0.0/itx_11.0.0_Darwin_amd64.tar.gz","linux/arm64":"htgithub.com/itxnetwork/itxtwork/itx/releases/download/v11.0.0/itx_11.0.0_Linux_arm64.tar.gz","linux/amd64":github.com/itxnetwork/itxxnetwork/itx/releases/download/v11.0.0/itx_11.0.0_Linux_amd64.tar.gz","windows/x86_6github.com/itxnetwork/itx/itxnetwork/itx/releases/download/v11.0.0/itx_11.0.0_Windows_x86_64.zip"}}'`
 
 	// at the time of this migration, on mainnet, channels 0 to 37 were open
 	// so this migration covers those channels only

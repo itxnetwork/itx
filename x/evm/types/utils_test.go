@@ -15,9 +15,9 @@ import (
 	proto "github.com/gogo/protobuf/proto"
 
 	"github.com/itxnetwork/itx/v12/app"
-	"github.com/itxnetwork/itxitx/v12/encoding"
-	utiltx "github.com/itxnetwork/itxitx/v12/testutil/tx"
-	evmtypes "github.com/itxnetwork/itxitx/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/encoding"
+	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
 
 	"github.com/stretchr/testify/require"
 )

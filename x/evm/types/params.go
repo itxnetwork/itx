@@ -24,7 +24,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/itxnetwork/itxitx/v12/utils"
+	"github.com/itxnetwork/itx/v12/utils"
 )
 
 var (

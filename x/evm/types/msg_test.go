@@ -18,11 +18,11 @@ import (
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/itxnetwork/itx/v12/crypto/ethsecp256k1"
-	utiltx "github.com/itxnetwork/itxitx/v12/testutil/tx"
+	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
 
-	"github.com/itxnetwork/itxitx/v12/app"
-	"github.com/itxnetwork/itxitx/v12/encoding"
-	"github.com/itxnetwork/itxitx/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/app"
+	"github.com/itxnetwork/itx/v12/encoding"
+	"github.com/itxnetwork/itx/v12/x/evm/types"
 )
 
 const invalidAddress = "0x0000"

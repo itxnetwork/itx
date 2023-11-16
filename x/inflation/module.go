@@ -35,9 +35,9 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/itxnetwork/itxitx/v12/x/inflation/client/cli"
-	"github.com/itxnetwork/itxitx/v12/x/inflation/keeper"
-	"github.com/itxnetwork/itxitx/v12/x/inflation/types"
+	"github.com/itxnetwork/itx/v12/x/inflation/client/cli"
+	"github.com/itxnetwork/itx/v12/x/inflation/keeper"
+	"github.com/itxnetwork/itx/v12/x/inflation/types"
 )
 
 // type check to ensure the interface is properly implemented

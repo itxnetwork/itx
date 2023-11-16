@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	epochstypes "github.com/itxnetwork/itx/v12/x/epochs/types"
-	"github.com/itxnetwork/itxitx/v12/x/inflation/types"
+	"github.com/itxnetwork/itx/v12/x/inflation/types"
 )
 
 func (suite *KeeperTestSuite) TestSetGetEpochIdentifier() {

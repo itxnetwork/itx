@@ -24,14 +24,14 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authante "github.com/cosmos/cosmos-sdk/x/auth/ante"
 	"github.com/ethereum/go-ethereum/common"
-	rpctypes "github.com/itxnetwork/itxitx/v12/rpc/types"
+	rpctypes "github.com/itxnetwork/itx/v12/rpc/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/libs/log"
 	tmtypes "github.com/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	itxtypes "github.com/itxnetwork/itxitx/v12/types"
-	evmtypes "github.com/itxnetwork/itxitx/v12/x/evm/types"
+	itxtypes "github.com/itxnetwork/itx/v12/types"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
 )
 
 const (

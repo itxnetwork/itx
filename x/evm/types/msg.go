@@ -32,7 +32,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/signing"
 	authtx "github.com/cosmos/cosmos-sdk/x/auth/tx"
 
-	"github.com/itxnetwork/itxitx/v12/types"
+	"github.com/itxnetwork/itx/v12/types"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core"

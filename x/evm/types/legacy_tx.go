@@ -23,7 +23,7 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
-	"github.com/itxnetwork/itxitx/v12/types"
+	"github.com/itxnetwork/itx/v12/types"
 )
 
 func NewLegacyTx(tx *ethtypes.Transaction) (*LegacyTx, error) {

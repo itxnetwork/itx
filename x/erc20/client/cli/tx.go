@@ -31,9 +31,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	itxtypes "github.com/itxnetwork/itxitx/v12/types"
+	itxtypes "github.com/itxnetwork/itx/v12/types"
 
-	"github.com/itxnetwork/itxitx/v12/x/erc20/types"
+	"github.com/itxnetwork/itx/v12/x/erc20/types"
 )
 
 // NewTxCmd returns a root CLI command handler for erc20 transaction commands

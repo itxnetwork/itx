@@ -17,8 +17,8 @@ import (
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	evm "github.com/itxnetwork/itx/v12/x/evm/types"
 
-	"github.com/itxnetwork/itxitx/v12/app"
-	"github.com/itxnetwork/itxitx/v12/x/vesting/types"
+	"github.com/itxnetwork/itx/v12/app"
+	"github.com/itxnetwork/itx/v12/x/vesting/types"
 )
 
 var (

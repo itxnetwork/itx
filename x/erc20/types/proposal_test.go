@@ -10,7 +10,7 @@ import (
 	length "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 
 	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
-	"github.com/itxnetwork/itxitx/v12/x/erc20/types"
+	"github.com/itxnetwork/itx/v12/x/erc20/types"
 )
 
 type ProposalTestSuite struct {

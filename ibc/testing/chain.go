@@ -34,10 +34,10 @@ import (
 	ibcgotesting "github.com/cosmos/ibc-go/v6/testing"
 	"github.com/cosmos/ibc-go/v6/testing/mock"
 
-	"github.com/itxnetwork/itxitx/v12/crypto/ethsecp256k1"
-	itxtypes "github.com/itxnetwork/itxitx/v12/types"
-	"github.com/itxnetwork/itxitx/v12/utils"
-	evmtypes "github.com/itxnetwork/itxitx/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/crypto/ethsecp256k1"
+	itxtypes "github.com/itxnetwork/itx/v12/types"
+	"github.com/itxnetwork/itx/v12/utils"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
 )
 
 // ChainIDPrefix defines the default chain ID prefix for Itx test chains

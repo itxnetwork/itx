@@ -12,7 +12,7 @@ import (
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 
 	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
-	"github.com/itxnetwork/itxitx/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/x/evm/types"
 
 	"github.com/stretchr/testify/suite"
 )

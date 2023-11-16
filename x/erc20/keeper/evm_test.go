@@ -8,12 +8,12 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
-	evmtypes "github.com/itxnetwork/itxitx/v12/x/evm/types"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/itxnetwork/itxitx/v12/contracts"
-	"github.com/itxnetwork/itxitx/v12/x/erc20/keeper"
-	"github.com/itxnetwork/itxitx/v12/x/erc20/types"
+	"github.com/itxnetwork/itx/v12/contracts"
+	"github.com/itxnetwork/itx/v12/x/erc20/keeper"
+	"github.com/itxnetwork/itx/v12/x/erc20/types"
 )
 
 func (suite *KeeperTestSuite) TestQueryERC20() {

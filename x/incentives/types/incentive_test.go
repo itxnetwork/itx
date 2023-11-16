@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/suite"
 
 	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
-	"github.com/itxnetwork/itxitx/v12/x/incentives/types"
+	"github.com/itxnetwork/itx/v12/x/incentives/types"
 )
 
 type IncentiveTestSuite struct {

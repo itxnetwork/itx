@@ -9,9 +9,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/feegrant"
 	cosmosante "github.com/itxnetwork/itx/v12/app/ante/cosmos"
-	"github.com/itxnetwork/itxitx/v12/testutil"
-	testutiltx "github.com/itxnetwork/itxitx/v12/testutil/tx"
-	"github.com/itxnetwork/itxitx/v12/utils"
+	"github.com/itxnetwork/itx/v12/testutil"
+	testutiltx "github.com/itxnetwork/itx/v12/testutil/tx"
+	"github.com/itxnetwork/itx/v12/utils"
 )
 
 func (suite *AnteTestSuite) TestDeductFeeDecorator() {

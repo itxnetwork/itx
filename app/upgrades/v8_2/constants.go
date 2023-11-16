@@ -22,5 +22,5 @@ const (
 	// MainnetUpgradeHeight defines the Itx mainnet block height on which the upgrade will take place
 	MainnetUpgradeHeight = 4_888_000
 	// UpgradeInfo defines the binaries that will be used for the upgrade
-	UpgradeInfo = `'{"binaries":{"darwin/amd64":"https://github.com/itxnetwork/itxitx/releases/download/v8.2.0/itx_8.2.0_Darwin_arm64.tar.gz","darwin/x86_64":"httpsgithub.com/itxnetwork/itxrk/itx/releases/download/v8.2.0/itx_8.2.0_Darwin_x86_64.tar.gz","linux/arm64":"htgithub.com/itxnetwork/itxtwork/itx/releases/download/v8.2.0/itx_8.2.0_Linux_arm64.tar.gz","linux/amd64":github.com/itxnetwork/itxxnetwork/itx/releases/download/v8.2.0/itx_8.2.0_Linux_amd64.tar.gz","windows/x86_6github.com/itxnetwork/itx/itxnetwork/itx/releases/download/v8.2.0/itx_8.2.0_Windows_x86_64.zip"}}'`
+	UpgradeInfo = `'{"binaries":{"darwin/amd64":"https://github.com/itxnetwork/itx/releases/download/v8.2.0/itx_8.2.0_Darwin_arm64.tar.gz","darwin/x86_64":"httpsgithub.com/itxnetwork/itxrk/itx/releases/download/v8.2.0/itx_8.2.0_Darwin_x86_64.tar.gz","linux/arm64":"htgithub.com/itxnetwork/itxtwork/itx/releases/download/v8.2.0/itx_8.2.0_Linux_arm64.tar.gz","linux/amd64":github.com/itxnetwork/itxxnetwork/itx/releases/download/v8.2.0/itx_8.2.0_Linux_amd64.tar.gz","windows/x86_6github.com/itxnetwork/itx/itxnetwork/itx/releases/download/v8.2.0/itx_8.2.0_Windows_x86_64.zip"}}'`
 )

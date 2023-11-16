@@ -4,8 +4,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/itxnetwork/itx/v12/testutil"
-	utiltx "github.com/itxnetwork/itxitx/v12/testutil/tx"
-	"github.com/itxnetwork/itxitx/v12/x/claims/types"
+	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
+	"github.com/itxnetwork/itx/v12/x/claims/types"
 )
 
 func (suite *KeeperTestSuite) TestClaimsInvariant() {

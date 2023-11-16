@@ -3,7 +3,7 @@ package keeper_test
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	feemarketkeeper "github.com/itxnetwork/itx/v12/x/feemarket/keeper"
-	"github.com/itxnetwork/itxitx/v12/x/feemarket/types"
+	"github.com/itxnetwork/itx/v12/x/feemarket/types"
 )
 
 type mockSubspace struct {

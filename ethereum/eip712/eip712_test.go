@@ -17,16 +17,16 @@ import (
 
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/itxnetwork/itxitx/v12/crypto/ethsecp256k1"
+	"github.com/itxnetwork/itx/v12/crypto/ethsecp256k1"
 
 	txtypes "github.com/cosmos/cosmos-sdk/types/tx"
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
 	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/itxnetwork/itxitx/v12/app"
-	"github.com/itxnetwork/itxitx/v12/cmd/config"
-	"github.com/itxnetwork/itxitx/v12/encoding"
-	"github.com/itxnetwork/itxitx/v12/utils"
+	"github.com/itxnetwork/itx/v12/app"
+	"github.com/itxnetwork/itx/v12/cmd/config"
+	"github.com/itxnetwork/itx/v12/encoding"
+	"github.com/itxnetwork/itx/v12/utils"
 
 	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
 	govtypesv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"

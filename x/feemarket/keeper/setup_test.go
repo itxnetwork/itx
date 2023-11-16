@@ -13,7 +13,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/itxnetwork/itx/v12/app"
-	"github.com/itxnetwork/itxitx/v12/x/feemarket/types"
+	"github.com/itxnetwork/itx/v12/x/feemarket/types"
 	"github.com/stretchr/testify/suite"
 )
 

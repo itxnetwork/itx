@@ -20,8 +20,8 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/itxnetwork/itxitx/v12/x/recovery/keeper"
-	"github.com/itxnetwork/itxitx/v12/x/recovery/types"
+	"github.com/itxnetwork/itx/v12/x/recovery/keeper"
+	"github.com/itxnetwork/itx/v12/x/recovery/types"
 )
 
 // InitGenesis import module genesis

@@ -9,7 +9,7 @@ import (
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/itxnetwork/itx/v12/x/evm/statedb"
-	"github.com/itxnetwork/itxitx/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/x/evm/types"
 )
 
 func (suite *KeeperTestSuite) TestEthereumTx() {
