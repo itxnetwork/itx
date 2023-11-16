@@ -1,6 +1,6 @@
 // This accounts file contains the accounts and corresponding token allocation for
 // accounts which participated in the Olympus Mons Testnet (November 2021) through
-// completion of the Mars Meteor Missions. The token allocation is in uitx.
+// completion of the Mars Meteor Missions. The token allocation is in aitx.
 
 // 7.5% of the genesis allocation, totaling to ~7.5M Itx tokens, was set aside for
 // participants of the incentivized testnet, of which ~5.6M is claimed here. The

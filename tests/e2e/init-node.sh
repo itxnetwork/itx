@@ -34,12 +34,12 @@ itxd keys add "$KEY" --keyring-backend $KEYRING --algo "$KEYALGO"
 # Set moniker and chain-id for Itx (Moniker can be anything, chain-id must be an integer)
 itxd init "$MONIKER" --chain-id "$CHAINID"
 
-# Change parameter token denominations to uitx
-jq '.app_state.staking.params.bond_denom="uitx"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
-jq '.app_state.crisis.constant_fee.denom="uitx"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
-jq '.app_state.gov.deposit_params.min_deposit[0].denom="uitx"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
-jq '.app_state.evm.params.evm_denom="uitx"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
-jq '.app_state.inflation.params.mint_denom="uitx"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
+# Change parameter token denominations to aitx
+jq '.app_state.staking.params.bond_denom="aitx"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
+jq '.app_state.crisis.constant_fee.denom="aitx"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
+jq '.app_state.gov.deposit_params.min_deposit[0].denom="aitx"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
+jq '.app_state.evm.params.evm_denom="aitx"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
+jq '.app_state.inflation.params.mint_denom="aitx"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 
 # set gov proposing && voting period
 jq '.app_state.gov.deposit_params.max_deposit_period="30s"' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
@@ -63,13 +63,13 @@ jq '.app_state.claims.params.duration_until_decay="100000s"' "$GENESIS" > "$TMP_
 
 # Claim module account:
 # 0xA61808Fe40fEb8B3433778BBC2ecECCAA47c8c47 || itx15cvq3ljql6utxseh0zau9m8ve2j8erz89m5wkz
-jq -r --arg amount_to_claim "$amount_to_claim" '.app_state.bank.balances += [{"address":"itx15cvq3ljql6utxseh0zau9m8ve2j8erz89m5wkz","coins":[{"denom":"uitx", "amount":$amount_to_claim}]}]' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
+jq -r --arg amount_to_claim "$amount_to_claim" '.app_state.bank.balances += [{"address":"itx15cvq3ljql6utxseh0zau9m8ve2j8erz89m5wkz","coins":[{"denom":"aitx", "amount":$amount_to_claim}]}]' "$GENESIS" > "$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 
 # disable produce empty block
 sed -i 's/create_empty_blocks = true/create_empty_blocks = false/g' "$CONFIG_TOML"
 
 # Allocate genesis accounts (cosmos formatted addresses)
-itxd add-genesis-account $KEY 100000000000000000000000000uitx --keyring-backend $KEYRING
+itxd add-genesis-account $KEY 100000000000000000000000000aitx --keyring-backend $KEYRING
 
 # Update total supply with claim values
 # Bc is required to add this big numbers
@@ -89,7 +89,7 @@ sed -i 's/pprof_laddr = "localhost:6060"/pprof_laddr = "0.0.0.0:6060"/g' "$CONFI
 sed -i 's/127.0.0.1/0.0.0.0/g' "$APP_TOML"
 
 # Sign genesis transaction
-itxd gentx $KEY 1000000000000000000000uitx --keyring-backend $KEYRING --chain-id "$CHAINID"
+itxd gentx $KEY 1000000000000000000000aitx --keyring-backend $KEYRING --chain-id "$CHAINID"
 ## In case you want to create multiple validators at genesis
 ## 1. Back to `itxd keys add` step, init more keys
 ## 2. Back to `itxd add-genesis-account` step, add balance for those
@@ -104,4 +104,4 @@ itxd collect-gentxs
 itxd validate-genesis
 
 # Start the node (remove the --pruning=nothing flag if historical queries are not needed)
-itxd start "$TRACE" --log_level $LOGLEVEL --minimum-gas-prices=0.0001uitx --json-rpc.api eth,txpool,personal,net,debug,web3
+itxd start "$TRACE" --log_level $LOGLEVEL --minimum-gas-prices=0.0001aitx --json-rpc.api eth,txpool,personal,net,debug,web3

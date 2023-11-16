@@ -35,7 +35,7 @@ const (
 	// TestnetChainID defines the Itx EIP155 chain ID for testnet
 	TestnetChainID = "itx_9000"
 	// BaseDenom defines the Itx mainnet denomination
-	BaseDenom = "uitx"
+	BaseDenom = "aitx"
 )
 
 // IsMainnet returns true if the chain-id has the Itx mainnet EIP155 chain prefix.

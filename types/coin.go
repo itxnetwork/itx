@@ -31,10 +31,10 @@ const (
 	// - Governance parameters: denomination used for spam prevention in proposal deposits
 	// - Crisis parameters: constant fee denomination used for spam prevention to check broken invariant
 	// - EVM parameters: denomination used for running EVM state transitions in Itx.
-	AttoItx string = "uitx"
+	AttoItx string = "aitx"
 
 	// BaseDenomUnit defines the base denomination unit for Itx.
-	// 1 itx = 1x10^{BaseDenomUnit} uitx
+	// 1 itx = 1x10^{BaseDenomUnit} aitx
 	BaseDenomUnit = 18
 
 	// DefaultGasPrice is default gas price for evm transactions
@@ -44,19 +44,19 @@ const (
 // PowerReduction defines the default power reduction value for staking
 var PowerReduction = sdkmath.NewIntFromBigInt(new(big.Int).Exp(big.NewInt(10), big.NewInt(BaseDenomUnit), nil))
 
-// NewItxCoin is a utility function that returns an "uitx" coin with the given sdkmath.Int amount.
+// NewItxCoin is a utility function that returns an "aitx" coin with the given sdkmath.Int amount.
 // The function will panic if the provided amount is negative.
 func NewItxCoin(amount sdkmath.Int) sdk.Coin {
 	return sdk.NewCoin(AttoItx, amount)
 }
 
-// NewItxDecCoin is a utility function that returns an "uitx" decimal coin with the given sdkmath.Int amount.
+// NewItxDecCoin is a utility function that returns an "aitx" decimal coin with the given sdkmath.Int amount.
 // The function will panic if the provided amount is negative.
 func NewItxDecCoin(amount sdkmath.Int) sdk.DecCoin {
 	return sdk.NewDecCoin(AttoItx, amount)
 }
 
-// NewItxCoinInt64 is a utility function that returns an "uitx" coin with the given int64 amount.
+// NewItxCoinInt64 is a utility function that returns an "aitx" coin with the given int64 amount.
 // The function will panic if the provided amount is negative.
 func NewItxCoinInt64(amount int64) sdk.Coin {
 	return sdk.NewInt64Coin(AttoItx, amount)

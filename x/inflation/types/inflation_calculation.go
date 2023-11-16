@@ -57,7 +57,7 @@ func CalculateEpochMintProvision(
 
 	// Multiply epochMintProvision with power reduction (10^18 for itx) as the
 	// calculation is based on `itx` and the issued tokens need to be given in
-	// `uitx`
+	// `aitx`
 	epochProvision = epochProvision.Mul(sdk.NewDecFromInt(itxtypes.PowerReduction))
 	return epochProvision
 }

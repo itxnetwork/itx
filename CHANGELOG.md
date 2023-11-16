@@ -101,7 +101,7 @@ Ref: https://keepachangelog.com/en/1.0.0/
 
 ### Improvements
 
-- (tests) [#1434](https://github.com/itxnetwork/itx/pull/1434) Set default staking denom to `uitx` in `evm` and `feemarket` tests
+- (tests) [#1434](https://github.com/itxnetwork/itx/pull/1434) Set default staking denom to `aitx` in `evm` and `feemarket` tests
 - (test) [#1402](https://github.com/itxnetwork/itx/pull/1402) Refactor NewTx function arguments
 - (test) [#1415](https://github.com/itxnetwork/itx/pull/1415) Refactor InvalidTx type and NextFn used in AnteHandler tests
 - (vesting) [#1400](https://github.com/itxnetwork/itx/pull/1400) Add convert vesting account message
@@ -421,7 +421,7 @@ Ref: https://keepachangelog.com/en/1.0.0/
 - (gitpod) [\#564](https://github.com/itxnetwork/itx/pull/564) Add one-click development environment
 - (erc20) [\#556](https://github.com/itxnetwork/itx/pull/556) Remove deprecated migrations.
 - (incentives) [\#551](https://github.com/itxnetwork/itx/pull/551) Add additional check to only distribute incentives to EOAs.
-- (cmd) [\#543](https://github.com/itxnetwork/itx/pull/543) Update mainnet default `min-gas-price` to `0.0025uitx`.
+- (cmd) [\#543](https://github.com/itxnetwork/itx/pull/543) Update mainnet default `min-gas-price` to `0.0025aitx`.
 - (epochs) [\#539](https://github.com/itxnetwork/itx/pull/539) Use constants for epoch identifiers.
 
 ### Bug Fixes

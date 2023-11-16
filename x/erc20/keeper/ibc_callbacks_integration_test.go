@@ -53,13 +53,13 @@ var _ = Describe("Convert receiving IBC to Erc20", Ordered, func() {
 		Base:        utils.BaseDenom,
 		DenomUnits: []*banktypes.DenomUnit{
 			{
-				Denom:    teststypes.UitxDenomtrace.BaseDenom,
+				Denom:    teststypes.aitxDenomtrace.BaseDenom,
 				Exponent: 0,
 			},
 		},
 		Name:    utils.BaseDenom,
 		Symbol:  erc20Symbol,
-		Display: teststypes.UitxDenomtrace.BaseDenom,
+		Display: teststypes.aitxDenomtrace.BaseDenom,
 	}
 
 	BeforeEach(func() {
@@ -149,39 +149,39 @@ var _ = Describe("Convert receiving IBC to Erc20", Ordered, func() {
 			ibcAtomBalanceAfter := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, teststypes.UatomIbcdenom)
 			s.Require().Equal(amount, ibcAtomBalanceAfter.Amount.Int64())
 		})
-		It("should transfer and not convert uitx", func() {
-			// Register 'uitx' coin in ERC-20 keeper to validate it is not converting the coins when receiving 'uitx' thru IBC
+		It("should transfer and not convert aitx", func() {
+			// Register 'aitx' coin in ERC-20 keeper to validate it is not converting the coins when receiving 'aitx' thru IBC
 			pair, err := s.app.Erc20Keeper.RegisterCoin(s.ItxChain.GetContext(), itxMeta)
 			s.Require().NoError(err)
 
-			uitxInitialBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, utils.BaseDenom)
+			aitxInitialBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, utils.BaseDenom)
 
-			// 1. Send uitx from Itx to Osmosis
+			// 1. Send aitx from Itx to Osmosis
 			s.SendAndReceiveMessage(s.pathOsmosisItx, s.ItxChain, utils.BaseDenom, amount, receiver, sender, 1, "")
 
-			uitxAfterBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, utils.BaseDenom)
-			s.Require().Equal(uitxInitialBalance.Amount.Sub(math.NewInt(amount)).Sub(sendAndReceiveMsgFee), uitxAfterBalance.Amount)
+			aitxAfterBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, utils.BaseDenom)
+			s.Require().Equal(aitxInitialBalance.Amount.Sub(math.NewInt(amount)).Sub(sendAndReceiveMsgFee), aitxAfterBalance.Amount)
 
-			// check ibc uitx coins balance on Osmosis
-			uitxIBCBalanceBefore := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), senderAcc, teststypes.UitxIbcdenom)
-			s.Require().Equal(amount, uitxIBCBalanceBefore.Amount.Int64())
+			// check ibc aitx coins balance on Osmosis
+			aitxIBCBalanceBefore := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), senderAcc, teststypes.aitxIbcdenom)
+			s.Require().Equal(amount, aitxIBCBalanceBefore.Amount.Int64())
 
-			// 2. Send uitx IBC coins from Osmosis to Itx
-			ibcCoinMeta := fmt.Sprintf("%s/%s", teststypes.UitxDenomtrace.Path, teststypes.UitxDenomtrace.BaseDenom)
-			s.SendBackCoins(s.pathOsmosisItx, s.IBCOsmosisChain, teststypes.UitxIbcdenom, amount, sender, receiver, 1, ibcCoinMeta)
+			// 2. Send aitx IBC coins from Osmosis to Itx
+			ibcCoinMeta := fmt.Sprintf("%s/%s", teststypes.aitxDenomtrace.Path, teststypes.aitxDenomtrace.BaseDenom)
+			s.SendBackCoins(s.pathOsmosisItx, s.IBCOsmosisChain, teststypes.aitxIbcdenom, amount, sender, receiver, 1, ibcCoinMeta)
 
-			// check ibc uitx coins balance on Osmosis - should be zero
-			uitxIBCSenderFinalBalance := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), senderAcc, teststypes.UitxIbcdenom)
-			s.Require().Equal(int64(0), uitxIBCSenderFinalBalance.Amount.Int64())
+			// check ibc aitx coins balance on Osmosis - should be zero
+			aitxIBCSenderFinalBalance := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), senderAcc, teststypes.aitxIbcdenom)
+			s.Require().Equal(int64(0), aitxIBCSenderFinalBalance.Amount.Int64())
 
-			// check uitx balance after transfer - should be equal to initial balance
-			uitxFinalBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, utils.BaseDenom)
+			// check aitx balance after transfer - should be equal to initial balance
+			aitxFinalBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, utils.BaseDenom)
 
 			totalFees := sendBackCoinsFee.Add(sendAndReceiveMsgFee)
-			s.Require().Equal(uitxInitialBalance.Amount.Sub(totalFees), uitxFinalBalance.Amount)
+			s.Require().Equal(aitxInitialBalance.Amount.Sub(totalFees), aitxFinalBalance.Amount)
 
 			// check IBC Coin balance - should be zero
-			ibcCoinsBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, teststypes.UitxIbcdenom)
+			ibcCoinsBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, teststypes.aitxIbcdenom)
 			s.Require().Equal(int64(0), ibcCoinsBalance.Amount.Int64())
 
 			// Check ERC20 balances - should be zero
@@ -298,7 +298,7 @@ var _ = Describe("Convert receiving IBC to Erc20", Ordered, func() {
 			err := testutil.FundModuleAccount(s.ItxChain.GetContext(), s.app.BankKeeper, claimstypes.ModuleName, coins)
 			s.Require().NoError(err)
 
-			receiverInitialUitxBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, utils.BaseDenom)
+			receiverInitialaitxBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, utils.BaseDenom)
 
 			uosmoInitialBalance := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), senderAcc, "uosmo")
 
@@ -307,7 +307,7 @@ var _ = Describe("Convert receiving IBC to Erc20", Ordered, func() {
 			amount, _ := strconv.ParseInt(claimstypes.IBCTriggerAmt, 10, 64)
 			s.SendAndReceiveMessage(s.pathOsmosisItx, s.IBCOsmosisChain, "uosmo", amount, sender, receiver, 1, "")
 
-			// should trigger claims logic and send uitx coins from claims to receiver
+			// should trigger claims logic and send aitx coins from claims to receiver
 
 			// ERC-20 balance should be the transferred amount
 			balanceTokenAfter := s.app.Erc20Keeper.BalanceOf(s.ItxChain.GetContext(), contracts.ERC20MinterBurnerDecimalsContract.ABI, pair.GetERC20Contract(), common.BytesToAddress(receiverAcc.Bytes()))
@@ -322,9 +322,9 @@ var _ = Describe("Convert receiving IBC to Erc20", Ordered, func() {
 			s.Require().Equal(uosmoInitialBalance.Amount.Int64()-amount, uosmoFinalBalance.Amount.Int64())
 
 			// validate that Receiver address on Itx got the claims tokens
-			receiverFinalUitxBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, utils.BaseDenom)
+			receiverFinalaitxBalance := s.app.BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, utils.BaseDenom)
 
-			s.Require().Equal(receiverInitialUitxBalance.Amount.Add(claimableAmount).Sub(sendBackCoinsFee), receiverFinalUitxBalance.Amount)
+			s.Require().Equal(receiverInitialaitxBalance.Amount.Add(claimableAmount).Sub(sendBackCoinsFee), receiverFinalaitxBalance.Amount)
 		})
 	})
 	Describe("registered erc20", func() {

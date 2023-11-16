@@ -11,7 +11,7 @@ echo "init Itx with moniker=$MONIKER and chain-id=$CHAINID"
 ./itxd init $MONIKER --chain-id $CHAINID --home $DATA_DIR
 echo "prepare genesis: Allocate genesis accounts"
 ./itxd add-genesis-account \
-"$(./itxd keys show $KEY -a --home $DATA_DIR --keyring-backend test)" 1000000000000000000uitx,1000000000000000000stake \
+"$(./itxd keys show $KEY -a --home $DATA_DIR --keyring-backend test)" 1000000000000000000aitx,1000000000000000000stake \
 --home $DATA_DIR --keyring-backend test
 echo "prepare genesis: Sign genesis transaction"
 ./itxd gentx $KEY 1000000000000000000stake --keyring-backend test --home $DATA_DIR --keyring-backend test --chain-id $CHAINID

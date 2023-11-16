@@ -44,7 +44,7 @@ const (
 	// DisplayDenom defines the denomination displayed to users in client applications.
 	DisplayDenom = "itx"
 	// BaseDenom defines to the default denomination used in Itx (staking, EVM, governance, etc.)
-	BaseDenom = "uitx"
+	BaseDenom = "aitx"
 )
 
 // SetBech32Prefixes sets the global prefixes to be used when serializing addresses and public keys to Bech32 strings.

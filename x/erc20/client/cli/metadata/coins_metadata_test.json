@@ -4,7 +4,7 @@
       "description": "The native staking and governance token of the Itx chain",
       "denom_units": [
         {
-          "denom": "uitx",
+          "denom": "aitx",
           "exponent": 0
         },
         {
@@ -12,9 +12,9 @@
           "exponent": 18
         }
       ],
-      "base": "uitx",
-      "display": "uitx",
-      "name": "uitx",
+      "base": "aitx",
+      "display": "aitx",
+      "name": "aitx",
       "symbol": "itx"
     },
     {

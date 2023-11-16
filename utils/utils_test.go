@@ -137,7 +137,7 @@ func TestItxCoinDenom(t *testing.T) {
 	}{
 		{
 			"valid denom - native coin",
-			"uitx",
+			"aitx",
 			false,
 		},
 		{
