@@ -9,10 +9,10 @@ parent:
 
 <div align="center">
   <a href="https://github.com/itxnetwork/itx/releases/latest">
-    <img alt="Version" src="https://img.shields.io/github/tag/tharsis/itx.svg" />
+    <img alt="Version" src="https://img.shields.io/github/tag/itxnetwork/itx.svg" />
   </a>
   <a href="https://github.com/itxnetwork/itx/blob/main/LICENSE">
-    <img alt="License: Apache-2.0" src="https://img.shields.io/github/license/tharsis/itx.svg" />
+    <img alt="License: Apache-2.0" src="https://img.shields.io/github/license/itxnetwork/itx.svg" />
   </a>
   <a href="https://pkg.go.dev/github.com/itxnetwork/itx">
     <img alt="GoDoc" src="https://godoc.org/github.com/itxnetwork/itx?status.svg" />
@@ -21,7 +21,7 @@ parent:
     <img alt="Go report card" src="https://goreportcard.com/badge/github.com/itxnetwork/itx"/>
   </a>
   <a href="https://bestpractices.coreinfrastructure.org/projects/5018">
-    <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/tharsis/itx">
+    <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/itxnetwork/itx">
   </a>
 </div>
 <div align="center">

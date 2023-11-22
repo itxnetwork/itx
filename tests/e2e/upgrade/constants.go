@@ -8,8 +8,8 @@ const (
 	// LocalVersionTag defines the docker image ImageTag when building locally
 	LocalVersionTag = "latest"
 
-	// tharsisRepo is the docker hub repository that contains the Itx images pulled during tests
-	tharsisRepo = "tharsishq/itx"
+	// itxnetworkRepo is the docker hub repository that contains the Itx images pulled during tests
+	itxnetworkRepo = "itxnetwork/itx"
 
 	// upgradesPath is the relative path from this folder to the app/upgrades folder
 	upgradesPath = "../../../app/upgrades"

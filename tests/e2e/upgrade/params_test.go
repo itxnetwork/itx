@@ -45,8 +45,8 @@ func TestLoadUpgradeParams(t *testing.T) {
 			want: Params{
 				MountPath: "/tmp/itx",
 				Versions: []VersionConfig{
-					{"v0.1.0", "v0.1.0", tharsisRepo},
-					{"v0.2.0", "v0.2.0", tharsisRepo},
+					{"v0.1.0", "v0.1.0", itxnetworkRepo},
+					{"v0.2.0", "v0.2.0", itxnetworkRepo},
 				},
 				ChainID:     "itx_9123-1",
 				WorkDirRoot: wd,
@@ -61,9 +61,9 @@ func TestLoadUpgradeParams(t *testing.T) {
 			want: Params{
 				MountPath: defaultMountPath,
 				Versions: []VersionConfig{
-					{"v0.1.0", "v0.1.0", tharsisRepo},
-					{"v0.2.0", "v0.2.0", tharsisRepo},
-					{latestVersionName, LocalVersionTag, tharsisRepo},
+					{"v0.1.0", "v0.1.0", itxnetworkRepo},
+					{"v0.2.0", "v0.2.0", itxnetworkRepo},
+					{latestVersionName, LocalVersionTag, itxnetworkRepo},
 				},
 				ChainID:     defaultChainID,
 				WorkDirRoot: wd,
@@ -79,8 +79,8 @@ func TestLoadUpgradeParams(t *testing.T) {
 			want: Params{
 				MountPath: defaultMountPath,
 				Versions: []VersionConfig{
-					{"v0.1.0", "v0.1.0", tharsisRepo},
-					{"v0.2.0", "v0.2.0", tharsisRepo},
+					{"v0.1.0", "v0.1.0", itxnetworkRepo},
+					{"v0.2.0", "v0.2.0", itxnetworkRepo},
 				},
 				ChainID:     defaultChainID,
 				WorkDirRoot: wd,
@@ -96,8 +96,8 @@ func TestLoadUpgradeParams(t *testing.T) {
 			want: Params{
 				MountPath: defaultMountPath,
 				Versions: []VersionConfig{
-					{"v0.1.0-rc1", "v0.1.0-rc1", tharsisRepo},
-					{"v0.2.0-rc2", "v0.2.0-rc2", tharsisRepo},
+					{"v0.1.0-rc1", "v0.1.0-rc1", itxnetworkRepo},
+					{"v0.2.0-rc2", "v0.2.0-rc2", itxnetworkRepo},
 				},
 				ChainID:     defaultChainID,
 				WorkDirRoot: wd,
@@ -110,8 +110,8 @@ func TestLoadUpgradeParams(t *testing.T) {
 			want: Params{
 				MountPath: defaultMountPath,
 				Versions: []VersionConfig{
-					{defaultInitialVersion, defaultInitialVersion, tharsisRepo},
-					{latestVersionName, LocalVersionTag, tharsisRepo},
+					{defaultInitialVersion, defaultInitialVersion, itxnetworkRepo},
+					{latestVersionName, LocalVersionTag, itxnetworkRepo},
 				},
 				ChainID:     defaultChainID,
 				WorkDirRoot: wd,

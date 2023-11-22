@@ -1,6 +1,6 @@
 # argument to provide specific version of itx node
 ARG INITIAL_VERSION
-FROM tharsishq/itx:$INITIAL_VERSION
+FROM itxnetwork/itx:$INITIAL_VERSION
 
 # jq needs to perform changes of node parameters
 RUN apt-get update \ 

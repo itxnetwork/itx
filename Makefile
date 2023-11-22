@@ -11,7 +11,7 @@ itx_DIR = itx
 BUILDDIR ?= $(CURDIR)/build
 HTTPS_GIT := https://github.com/itxnetwork/itx.git
 DOCKER := $(shell which docker)
-NAMESPACE := tharsishq
+NAMESPACE := itxnetwork
 PROJECT := itx
 DOCKER_IMAGE := $(NAMESPACE)/$(PROJECT)
 COMMIT_HASH := $(shell git rev-parse --short=7 HEAD)
