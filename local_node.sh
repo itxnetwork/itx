@@ -87,8 +87,8 @@ if [[ $overwrite == "y" || $overwrite == "Y" ]]; then
 	jq '.app_state["claims"]["params"]["duration_until_decay"]="100000s"' >"$TMP_GENESIS" "$GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 
 	# Claim module account:
-	# 0xA61808Fe40fEb8B3433778BBC2ecECCAA47c8c47 || itx15cvq3ljql6utxseh0zau9m8ve2j8erz89m5wkz
-	jq -r --arg amount_to_claim "$amount_to_claim" '.app_state["bank"]["balances"] += [{"address":"itx15cvq3ljql6utxseh0zau9m8ve2j8erz89m5wkz","coins":[{"denom":"aitx", "amount":$amount_to_claim}]}]' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
+	# itx15cvq3ljql6utxseh0zau9m8ve2j8erz8w5gvad
+	jq -r --arg amount_to_claim "$amount_to_claim" '.app_state["bank"]["balances"] += [{"address":"itx15cvq3ljql6utxseh0zau9m8ve2j8erz8w5gvad","coins":[{"denom":"aitx", "amount":$amount_to_claim}]}]' "$GENESIS" >"$TMP_GENESIS" && mv "$TMP_GENESIS" "$GENESIS"
 
 	if [[ $1 == "pending" ]]; then
 		if [[ "$OSTYPE" == "darwin"* ]]; then
