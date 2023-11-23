@@ -118,7 +118,6 @@ Ref: https://keepachangelog.com/en/1.0.0/
 - (claims) [#1126](https://github.com/itxnetwork/itx/pull/1126) Remove old x/params migration logic
 - (vesting) [#1155](https://github.com/itxnetwork/itx/pull/1155) Migrate deprecated event emitting to new `TypedEvent`
 - (docs) [#1361](https://github.com/itxnetwork/itx/pull/1361) Update `vesting` module docs with new behavior for `ClawbackVestingAccounts`
-- (evm) [#1349](https://github.com/itxnetwork/itx/pull/1349) Restrict the Itx codebase from working with chain IDs other than `9000` and `9001`
 - (test) [#1352](https://github.com/itxnetwork/itx/pull/1352) Deprecate usage of `aphoton` as denomination on tests
 - (test) [#1369](https://github.com/itxnetwork/itx/pull/1369) Refactor code to use `BaseDenom` for simplification
 - (cli) [#1371](https://github.com/itxnetwork/itx/pull/1371) Improve cli error messages
