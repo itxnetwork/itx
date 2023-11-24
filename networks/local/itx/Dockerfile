@@ -1,7 +1,10 @@
-FROM golang:1.20-bullseye as build-env
+FROM --platform=linux/arm64 golang:1.20-bullseye as build-env
 
 # Install minimum necessary dependencies
-ENV PACKAGES curl make git libc-dev bash gcc
+ENV CGO_ENABLED=1
+ARG ARCH=amd64
+
+ENV PACKAGES curl make git libc-dev bash gcc-aarch64-linux-gnu
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y $PACKAGES
 
@@ -12,7 +15,7 @@ WORKDIR /go/src/github.com/itxnetwork/itx
 COPY . .
 
 # build Ethermint
-RUN make build-linux
+RUN make build-linux arch=$ARCH
 
 # Final image
 FROM golang:1.20-bullseye as final
