@@ -110,8 +110,8 @@ func TestIBCTestingSuite(t *testing.T) {
 }
 
 func (suite *IBCTestingSuite) TestOnAcknowledgementPacketIBC() {
-	sender := "itx1sv9m0g7ycejwr3s369km58h5qe7xj77hvcxrms"   //nolint:goconst
-	receiver := "itx1hf0468jjpe6m6vx38s97z2qqe8ldu0njdyf625" //nolint:goconst
+	sender := "itx1sv9m0g7ycejwr3s369km58h5qe7xj77h8h6psl"   //nolint:goconst
+	receiver := "itx1hf0468jjpe6m6vx38s97z2qqe8ldu0njxt4cpm" //nolint:goconst
 
 	senderAddr, err := sdk.AccAddressFromBech32(sender)
 	suite.Require().NoError(err)
@@ -206,8 +206,8 @@ func (suite *IBCTestingSuite) TestOnAcknowledgementPacketIBC() {
 }
 
 func (suite *IBCTestingSuite) TestOnRecvPacketIBC() {
-	sender := "itx1hf0468jjpe6m6vx38s97z2qqe8ldu0njdyf625"
-	receiver := "itx1sv9m0g7ycejwr3s369km58h5qe7xj77hvcxrms"
+	sender := "itx1hf0468jjpe6m6vx38s97z2qqe8ldu0njxt4cpm"
+	receiver := "itx1sv9m0g7ycejwr3s369km58h5qe7xj77h8h6psl"
 	triggerAmt := types.IBCTriggerAmt
 
 	senderAddr, err := sdk.AccAddressFromBech32(sender)

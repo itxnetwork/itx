@@ -68,12 +68,12 @@ func (suite *KeeperTestSuite) TestAckknowledgementPacket() {
 		{
 			"error - no escrowed funds",
 			func() {
-				addr, err := sdk.AccAddressFromBech32("itx1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v")
+				addr, err := sdk.AccAddressFromBech32("itx170xvzjjtvd3h6my2z8dl3whkx9l89xsqg72hvs")
 				suite.Require().NoError(err)
 
 				mockpacket.Data = transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
-						Sender:   "itx1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Sender:   "itx170xvzjjtvd3h6my2z8dl3whkx9l89xsqg72hvs",
 						Receiver: "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
 					},
 				)
@@ -89,12 +89,12 @@ func (suite *KeeperTestSuite) TestAckknowledgementPacket() {
 			func() {
 				suite.SetupTestWithEscrow()
 
-				addr, err := sdk.AccAddressFromBech32("itx1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v")
+				addr, err := sdk.AccAddressFromBech32("itx170xvzjjtvd3h6my2z8dl3whkx9l89xsqg72hvs")
 				suite.Require().NoError(err)
 
 				mockpacket.Data = transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
-						Sender:   "itx1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Sender:   "itx170xvzjjtvd3h6my2z8dl3whkx9l89xsqg72hvs",
 						Receiver: "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
 					},
 				)
@@ -111,12 +111,12 @@ func (suite *KeeperTestSuite) TestAckknowledgementPacket() {
 			func() {
 				suite.SetupTestWithEscrow()
 
-				addr, err := sdk.AccAddressFromBech32("itx1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v")
+				addr, err := sdk.AccAddressFromBech32("itx170xvzjjtvd3h6my2z8dl3whkx9l89xsqg72hvs")
 				suite.Require().NoError(err)
 
 				mockpacket.Data = transfertypes.ModuleCdc.MustMarshalJSON(
 					&transfertypes.FungibleTokenPacketData{
-						Sender:   "itx1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+						Sender:   "itx170xvzjjtvd3h6my2z8dl3whkx9l89xsqg72hvs",
 						Receiver: "cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
 					},
 				)
@@ -151,8 +151,8 @@ func (suite *KeeperTestSuite) TestOnRecvPacket() {
 	secpAddr := sdk.AccAddress(pk.PubKey().Address())
 	secpAddrItx := secpAddr.String()
 	secpAddrCosmos := sdk.MustBech32ifyAddressBytes(sdk.Bech32MainPrefix, secpAddr)
-	senderStr := "itx1sv9m0g7ycejwr3s369km58h5qe7xj77hvcxrms"
-	receiverStr := "itx1hf0468jjpe6m6vx38s97z2qqe8ldu0njdyf625"
+	senderStr := "itx1sv9m0g7ycejwr3s369km58h5qe7xj77h8h6psl"
+	receiverStr := "itx1hf0468jjpe6m6vx38s97z2qqe8ldu0njxt4cpm"
 	sender, err := sdk.AccAddressFromBech32(senderStr)
 	suite.Require().NoError(err)
 	receiver, err := sdk.AccAddressFromBech32(receiverStr)

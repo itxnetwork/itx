@@ -1053,7 +1053,7 @@ func (suite *KeeperTestSuite) TestClawbackEmptyAccountsAirdrop() {
 	}{
 		{
 			name:           "address active",
-			address:        "itx1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			address:        "itx184p39gadrq9s0wrfeyuswfrpalhe8anj7a6gq8",
 			sequence:       1,
 			expectClawback: false,
 			claimsRecord: types.ClaimsRecord{
@@ -1063,7 +1063,7 @@ func (suite *KeeperTestSuite) TestClawbackEmptyAccountsAirdrop() {
 		},
 		{
 			name:           "address inactive",
-			address:        "itx1x2w87cvt5mqjncav4lxy8yfreynn273xn5335v",
+			address:        "itx170xvzjjtvd3h6my2z8dl3whkx9l89xsqg72hvs",
 			sequence:       0,
 			expectClawback: true,
 			claimsRecord: types.ClaimsRecord{

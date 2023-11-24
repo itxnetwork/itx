@@ -181,7 +181,7 @@ func TestEqualMetadata(t *testing.T) {
 						Aliases:  []string{"atto itx"},
 					},
 					{
-						Denom:    "aitx",
+						Denom:    "Aitx",
 						Exponent: 12,
 						Aliases:  []string{"micro itx"},
 					},

@@ -100,20 +100,20 @@ func TestGetItxAddressFromBech32(t *testing.T) {
 		},
 		{
 			"itx address",
-			"itx1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
-			"itx1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"itx184p39gadrq9s0wrfeyuswfrpalhe8anj7a6gq8",
+			"itx184p39gadrq9s0wrfeyuswfrpalhe8anj7a6gq8",
 			false,
 		},
 		{
 			"cosmos address",
-			"cosmos1qql8ag4cluz6r4dz28p3w00dnc9w8ueulg2gmc",
-			"itx1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"cosmos184p39gadrq9s0wrfeyuswfrpalhe8anjhnhy3q",
+			"itx184p39gadrq9s0wrfeyuswfrpalhe8anj7a6gq8",
 			false,
 		},
 		{
 			"osmosis address",
 			"osmo1qql8ag4cluz6r4dz28p3w00dnc9w8ueuhnecd2",
-			"itx1qql8ag4cluz6r4dz28p3w00dnc9w8ueuafmxps",
+			"itx1qql8ag4cluz6r4dz28p3w00dnc9w8ueukx8y2l",
 			false,
 		},
 	}
