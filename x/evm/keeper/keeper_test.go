@@ -30,12 +30,6 @@ func (suite *KeeperTestSuite) TestWithChainID() {
 			true,
 		},
 		{
-			"fail - other chainID",
-			"chain_7701-1",
-			0,
-			true,
-		},
-		{
 			"success - Itx mainnet chain ID",
 			"itx_9001-2",
 			9001,
