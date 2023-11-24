@@ -155,8 +155,8 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 						// Check that the aitx were recovered
 						nativeItx := s.ItxChain.App.(*app.Itx).BankKeeper.GetBalance(s.ItxChain.GetContext(), senderAcc, "aitx")
 						Expect(nativeItx.IsZero()).To(BeTrue())
-						ibcItx := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, teststypes.aitxIbcdenom)
-						Expect(ibcItx).To(Equal(sdk.NewCoin(teststypes.aitxIbcdenom, coinItx.Amount)))
+						ibcItx := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, teststypes.AitxIbcdenom)
+						Expect(ibcItx).To(Equal(sdk.NewCoin(teststypes.AitxIbcdenom, coinItx.Amount)))
 
 						// Check that the uosmo were recovered
 						ibcOsmo = s.ItxChain.App.(*app.Itx).BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, teststypes.UosmoIbcdenom)
@@ -200,8 +200,8 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 						// Check that the aitx were recovered
 						nativeItx := s.ItxChain.App.(*app.Itx).BankKeeper.GetBalance(s.ItxChain.GetContext(), senderAcc, "aitx")
 						Expect(nativeItx.IsZero()).To(BeTrue())
-						ibcItx := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, teststypes.aitxIbcdenom)
-						Expect(ibcItx).To(Equal(sdk.NewCoin(teststypes.aitxIbcdenom, coinItx.Amount)))
+						ibcItx := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, teststypes.AitxIbcdenom)
+						Expect(ibcItx).To(Equal(sdk.NewCoin(teststypes.AitxIbcdenom, coinItx.Amount)))
 
 						// Check that the uosmo were recovered
 						ibcOsmo = s.ItxChain.App.(*app.Itx).BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, teststypes.UosmoIbcdenom)
@@ -238,8 +238,8 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 						// aitx was recovered from user address
 						nativeItx := s.ItxChain.App.(*app.Itx).BankKeeper.GetBalance(s.ItxChain.GetContext(), senderAcc, "aitx")
 						Expect(nativeItx.IsZero()).To(BeTrue())
-						ibcItx := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, teststypes.aitxIbcdenom)
-						Expect(ibcItx).To(Equal(sdk.NewCoin(teststypes.aitxIbcdenom, coinItx.Amount)))
+						ibcItx := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, teststypes.AitxIbcdenom)
+						Expect(ibcItx).To(Equal(sdk.NewCoin(teststypes.AitxIbcdenom, coinItx.Amount)))
 
 						// Check that the uosmo were retrieved
 						ibcOsmo := s.ItxChain.App.(*app.Itx).BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, teststypes.UosmoIbcdenom)
@@ -261,8 +261,8 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 						// No further tokens recovered
 						nativeItx = s.ItxChain.App.(*app.Itx).BankKeeper.GetBalance(s.ItxChain.GetContext(), senderAcc, "aitx")
 						Expect(nativeItx.IsZero()).To(BeTrue())
-						ibcItx = s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, teststypes.aitxIbcdenom)
-						Expect(ibcItx).To(Equal(sdk.NewCoin(teststypes.aitxIbcdenom, coinItx.Amount)))
+						ibcItx = s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, teststypes.AitxIbcdenom)
+						Expect(ibcItx).To(Equal(sdk.NewCoin(teststypes.AitxIbcdenom, coinItx.Amount)))
 
 						ibcOsmo = s.ItxChain.App.(*app.Itx).BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, teststypes.UosmoIbcdenom)
 						Expect(ibcOsmo.IsZero()).To(BeTrue())
@@ -315,8 +315,8 @@ var _ = Describe("Recovery: Performing an IBC Transfer", Ordered, func() {
 						// aitx was recovered from user address
 						nativeItx := s.ItxChain.App.(*app.Itx).BankKeeper.GetBalance(s.ItxChain.GetContext(), senderAcc, "aitx")
 						Expect(nativeItx.IsZero()).To(BeTrue())
-						ibcItx := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, teststypes.aitxIbcdenom)
-						Expect(ibcItx).To(Equal(sdk.NewCoin(teststypes.aitxIbcdenom, coinItx.Amount)))
+						ibcItx := s.IBCOsmosisChain.GetSimApp().BankKeeper.GetBalance(s.IBCOsmosisChain.GetContext(), receiverAcc, teststypes.AitxIbcdenom)
+						Expect(ibcItx).To(Equal(sdk.NewCoin(teststypes.AitxIbcdenom, coinItx.Amount)))
 
 						// Check that the uosmo were recovered
 						ibcOsmo := s.ItxChain.App.(*app.Itx).BankKeeper.GetBalance(s.ItxChain.GetContext(), receiverAcc, teststypes.UosmoIbcdenom)
