@@ -1,18 +1,18 @@
-// Copyright 2022 Evmos Foundation
-// This file is part of the Evmos Network packages.
+// Copyright 2022 Itx Foundation
+// This file is part of the Itx Network packages.
 //
-// Evmos is free software: you can redistribute it and/or modify
+// Itx is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The Evmos packages are distributed in the hope that it will be useful,
+// The Itx packages are distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Evmos packages. If not, see https://github.com/evmos/evmos/blob/main/LICENSE
+// along with the Itx packages. If not, see https://github.com/itxnetwork/itx/blob/main/LICENSE
 
 package keeper
 
@@ -22,7 +22,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	errortypes "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/evmos/evmos/v12/x/claims/types"
+	"github.com/itxnetwork/itx/v12/x/claims/types"
 )
 
 // ClaimCoinsForAction removes the claimable amount entry from a claims record
@@ -119,10 +119,10 @@ func (k Keeper) MergeClaimsRecords(
 	for _, action := range actions {
 
 		// Safety check: the sender record cannot have any claimed actions, as
-		//  - the sender is not an evmos address and can't claim vote, delegation or evm actions
+		//  - the sender is not an itx address and can't claim vote, delegation or evm actions
 		//  - the first attempt to perform an ibc callback from the senders account will merge/migrate the entire claims record
 		if senderClaimsRecord.HasClaimedAction(action) {
-			return types.ClaimsRecord{}, errorsmod.Wrapf(errortypes.ErrNotSupported, "non-evmos sender must not have claimed action: %v", action)
+			return types.ClaimsRecord{}, errorsmod.Wrapf(errortypes.ErrNotSupported, "non-itx sender must not have claimed action: %v", action)
 		}
 
 		recipientCompleted := recipientClaimsRecord.HasClaimedAction(action)

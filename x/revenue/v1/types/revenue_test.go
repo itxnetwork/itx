@@ -7,8 +7,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 
-	utiltx "github.com/evmos/evmos/v12/testutil/tx"
-	"github.com/evmos/evmos/v12/x/revenue/v1/types"
+	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
+	"github.com/itxnetwork/itx/v12/x/revenue/v1/types"
 
 	"github.com/stretchr/testify/suite"
 )
@@ -124,7 +124,7 @@ func (suite *RevenueTestSuite) TestFee() {
 			"Create revenue- invalid deployer address",
 			types.Revenue{
 				utiltx.GenerateAddress().String(),
-				"evmos14mq5c8yn9jx295ahaxye2f0xw3tlell0lt542Z",
+				"itx14mq5c8yn9jx295ahaxye2f0xw3tlell0lt542Z",
 				suite.address2.String(),
 			},
 			false,
@@ -134,7 +134,7 @@ func (suite *RevenueTestSuite) TestFee() {
 			types.Revenue{
 				utiltx.GenerateAddress().String(),
 				suite.address1.String(),
-				"evmos14mq5c8yn9jx295ahaxye2f0xw3tlell0lt542Z",
+				"itx14mq5c8yn9jx295ahaxye2f0xw3tlell0lt542Z",
 			},
 			false,
 		},

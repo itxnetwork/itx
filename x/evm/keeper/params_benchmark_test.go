@@ -3,7 +3,7 @@ package keeper_test
 import (
 	"testing"
 
-	"github.com/evmos/evmos/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/x/evm/types"
 )
 
 func BenchmarkSetParams(b *testing.B) {

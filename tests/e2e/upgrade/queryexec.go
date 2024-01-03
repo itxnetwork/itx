@@ -4,10 +4,10 @@ import (
 	"fmt"
 )
 
-// CreateModuleQueryExec creates a Evmos module query
+// CreateModuleQueryExec creates a Itx module query
 func (m *Manager) CreateModuleQueryExec(moduleName, subCommand, chainID string) (string, error) {
 	cmd := []string{
-		"evmosd",
+		"itxd",
 		"q",
 		moduleName,
 		subCommand,

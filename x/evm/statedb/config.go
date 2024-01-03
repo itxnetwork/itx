@@ -1,18 +1,18 @@
-// Copyright 2022 Evmos Foundation
-// This file is part of Evmos' Evmos packages.
+// Copyright 2022 Itx Foundation
+// This file is part of Itx' Itx packages.
 //
-// The Evmos packages is free software: you can redistribute it and/or modify
+// The Itx packages is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The Evmos packages is distributed in the hope that it will be useful,
+// The Itx packages is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Evmos packages. If not, see https://github.com/evmos/evmos/blob/main/LICENSE
+// along with the Itx packages. If not, see https://github.com/itxnetwork/itx/blob/main/LICENSE
 package statedb
 
 import (
@@ -20,7 +20,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/params"
-	"github.com/evmos/evmos/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/x/evm/types"
 )
 
 // TxConfig encapulates the readonly information of current tx for `StateDB`.

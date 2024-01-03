@@ -1,18 +1,18 @@
-// Copyright 2022 Evmos Foundation
-// This file is part of the Evmos Network packages.
+// Copyright 2022 Itx Foundation
+// This file is part of the Itx Network packages.
 //
-// Evmos is free software: you can redistribute it and/or modify
+// Itx is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The Evmos packages are distributed in the hope that it will be useful,
+// The Itx packages are distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Evmos packages. If not, see https://github.com/evmos/evmos/blob/main/LICENSE
+// along with the Itx packages. If not, see https://github.com/itxnetwork/itx/blob/main/LICENSE
 
 package network
 
@@ -43,10 +43,10 @@ import (
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	govv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	inflationtypes "github.com/evmos/evmos/v12/x/inflation/types"
+	inflationtypes "github.com/itxnetwork/itx/v12/x/inflation/types"
 
-	"github.com/evmos/evmos/v12/server"
-	evmtypes "github.com/evmos/evmos/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/server"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
 )
 
 func startInProcess(cfg Config, val *Validator) error {
@@ -169,7 +169,7 @@ func collectGenFiles(cfg Config, vals []*Validator, outputDir string) error {
 	for i := 0; i < cfg.NumValidators; i++ {
 		tmCfg := vals[i].Ctx.Config
 
-		nodeDir := filepath.Join(outputDir, vals[i].Moniker, "evmosd")
+		nodeDir := filepath.Join(outputDir, vals[i].Moniker, "itxd")
 		gentxsDir := filepath.Join(outputDir, "gentxs")
 
 		tmCfg.Moniker = vals[i].Moniker

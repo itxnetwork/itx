@@ -15,10 +15,10 @@ import (
 	"github.com/stretchr/testify/suite"
 
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
-	evm "github.com/evmos/evmos/v12/x/evm/types"
+	evm "github.com/itxnetwork/itx/v12/x/evm/types"
 
-	"github.com/evmos/evmos/v12/app"
-	"github.com/evmos/evmos/v12/x/vesting/types"
+	"github.com/itxnetwork/itx/v12/app"
+	"github.com/itxnetwork/itx/v12/x/vesting/types"
 )
 
 var (
@@ -38,7 +38,7 @@ type KeeperTestSuite struct {
 	suite.Suite
 
 	ctx            sdk.Context
-	app            *app.Evmos
+	app            *app.Itx
 	queryClientEvm evm.QueryClient
 	queryClient    types.QueryClient
 	address        common.Address

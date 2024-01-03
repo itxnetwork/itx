@@ -1,24 +1,24 @@
-// Copyright 2022 Evmos Foundation
-// This file is part of the Evmos Network packages.
+// Copyright 2022 Itx Foundation
+// This file is part of the Itx Network packages.
 //
-// Evmos is free software: you can redistribute it and/or modify
+// Itx is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The Evmos packages are distributed in the hope that it will be useful,
+// The Itx packages are distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Evmos packages. If not, see https://github.com/evmos/evmos/blob/main/LICENSE
+// along with the Itx packages. If not, see https://github.com/itxnetwork/itx/blob/main/LICENSE
 package keeper
 
 import (
 	"fmt"
 
-	"github.com/evmos/evmos/v12/x/feemarket/types"
+	"github.com/itxnetwork/itx/v12/x/feemarket/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 
 	sdkmath "cosmossdk.io/math"
@@ -75,7 +75,7 @@ func (k *Keeper) EndBlock(ctx sdk.Context, _ abci.RequestEndBlock) {
 	// to prevent BaseFee manipulation we limit the gasWanted so that
 	// gasWanted = max(gasWanted * MinGasMultiplier, gasUsed)
 	// this will be keep BaseFee protected from un-penalized manipulation
-	// more info here https://github.com/evmos/ethermint/pull/1105#discussion_r888798925
+	// more info here https://github.com/itxnetwork/ethermint/pull/1105#discussion_r888798925
 	minGasMultiplier := k.GetParams(ctx).MinGasMultiplier
 	limitedGasWanted := sdk.NewDec(gasWanted.Int64()).Mul(minGasMultiplier)
 	updatedGasWanted := sdk.MaxDec(limitedGasWanted, sdk.NewDec(gasUsed.Int64())).TruncateInt().Uint64()

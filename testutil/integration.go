@@ -1,18 +1,18 @@
-// Copyright 2022 Evmos Foundation
-// This file is part of the Evmos Network packages.
+// Copyright 2022 Itx Foundation
+// This file is part of the Itx Network packages.
 //
-// Evmos is free software: you can redistribute it and/or modify
+// Itx is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The Evmos packages are distributed in the hope that it will be useful,
+// The Itx packages are distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Evmos packages. If not, see https://github.com/evmos/evmos/blob/main/LICENSE
+// along with the Itx packages. If not, see https://github.com/itxnetwork/itx/blob/main/LICENSE
 
 package testutil
 
@@ -25,8 +25,8 @@ import (
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/evmos/evmos/v12/app"
-	"github.com/evmos/evmos/v12/crypto/ethsecp256k1"
+	"github.com/itxnetwork/itx/v12/app"
+	"github.com/itxnetwork/itx/v12/crypto/ethsecp256k1"
 )
 
 // SubmitProposal delivers a submit proposal tx for a given gov content.
@@ -34,7 +34,7 @@ import (
 // event.
 func SubmitProposal(
 	ctx sdk.Context,
-	appEvmos *app.Evmos,
+	appItx *app.Itx,
 	pk *ethsecp256k1.PrivKey,
 	content govv1beta1.Content,
 	eventNum int,
@@ -47,7 +47,7 @@ func SubmitProposal(
 	if err != nil {
 		return id, err
 	}
-	res, err := DeliverTx(ctx, appEvmos, pk, nil, msg)
+	res, err := DeliverTx(ctx, appItx, pk, nil, msg)
 	if err != nil {
 		return id, err
 	}
@@ -63,7 +63,7 @@ func SubmitProposal(
 // Delegate delivers a delegate tx
 func Delegate(
 	ctx sdk.Context,
-	appEvmos *app.Evmos,
+	appItx *app.Itx,
 	priv *ethsecp256k1.PrivKey,
 	delegateAmount sdk.Coin,
 	validator stakingtypes.Validator,
@@ -76,13 +76,13 @@ func Delegate(
 	}
 
 	delegateMsg := stakingtypes.NewMsgDelegate(accountAddress, val, delegateAmount)
-	return DeliverTx(ctx, appEvmos, priv, nil, delegateMsg)
+	return DeliverTx(ctx, appItx, priv, nil, delegateMsg)
 }
 
 // Vote delivers a vote tx with the VoteOption "yes"
 func Vote(
 	ctx sdk.Context,
-	appEvmos *app.Evmos,
+	appItx *app.Itx,
 	priv *ethsecp256k1.PrivKey,
 	proposalID uint64,
 	voteOption govv1beta1.VoteOption,
@@ -90,5 +90,5 @@ func Vote(
 	accountAddress := sdk.AccAddress(priv.PubKey().Address().Bytes())
 
 	voteMsg := govv1beta1.NewMsgVote(accountAddress, proposalID, voteOption)
-	return DeliverTx(ctx, appEvmos, priv, nil, voteMsg)
+	return DeliverTx(ctx, appItx, priv, nil, voteMsg)
 }

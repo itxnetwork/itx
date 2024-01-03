@@ -8,12 +8,12 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/evmos/evmos/v12/app/ante/evm"
-	"github.com/evmos/evmos/v12/testutil"
-	utiltx "github.com/evmos/evmos/v12/testutil/tx"
-	"github.com/evmos/evmos/v12/types"
-	"github.com/evmos/evmos/v12/utils"
-	evmtypes "github.com/evmos/evmos/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/app/ante/evm"
+	"github.com/itxnetwork/itx/v12/testutil"
+	utiltx "github.com/itxnetwork/itx/v12/testutil/tx"
+	"github.com/itxnetwork/itx/v12/types"
+	"github.com/itxnetwork/itx/v12/utils"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
 )
 
 func (suite *AnteTestSuite) TestGasWantedDecorator() {
@@ -35,8 +35,8 @@ func (suite *AnteTestSuite) TestGasWantedDecorator() {
 			func() sdk.Tx {
 				denom := evmtypes.DefaultEVMDenom
 				testMsg := banktypes.MsgSend{
-					FromAddress: "evmos1x8fhpj9nmhqk8z9kpgjt95ck2xwyue0ptzkucp",
-					ToAddress:   "evmos1dx67l23hz9l0k9hcher8xz04uj7wf3yu26l2yn",
+					FromAddress: "itx1x8fhpj9nmhqk8z9kpgjt95ck2xwyue0ptzkucp",
+					ToAddress:   "itx10cxhhfa6ywsxh4vzwrwk6zgj0j6g2a9l3l9fkg",
 					Amount:      sdk.Coins{sdk.Coin{Amount: sdkmath.NewInt(10), Denom: denom}},
 				}
 				txBuilder := suite.CreateTestCosmosTxBuilder(sdkmath.NewInt(10), utils.BaseDenom, &testMsg)
@@ -94,8 +94,8 @@ func (suite *AnteTestSuite) TestGasWantedDecorator() {
 			func() sdk.Tx {
 				denom := evmtypes.DefaultEVMDenom
 				testMsg := banktypes.MsgSend{
-					FromAddress: "evmos1x8fhpj9nmhqk8z9kpgjt95ck2xwyue0ptzkucp",
-					ToAddress:   "evmos1dx67l23hz9l0k9hcher8xz04uj7wf3yu26l2yn",
+					FromAddress: "itx1x8fhpj9nmhqk8z9kpgjt95ck2xwyue0ptzkucp",
+					ToAddress:   "itx10cxhhfa6ywsxh4vzwrwk6zgj0j6g2a9l3l9fkg",
 					Amount:      sdk.Coins{sdk.Coin{Amount: sdkmath.NewInt(10), Denom: denom}},
 				}
 				txBuilder := suite.CreateTestCosmosTxBuilder(sdkmath.NewInt(10), utils.BaseDenom, &testMsg)

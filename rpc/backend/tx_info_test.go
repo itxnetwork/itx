@@ -7,11 +7,11 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/evmos/evmos/v12/indexer"
-	"github.com/evmos/evmos/v12/rpc/backend/mocks"
-	rpctypes "github.com/evmos/evmos/v12/rpc/types"
-	evmostypes "github.com/evmos/evmos/v12/types"
-	evmtypes "github.com/evmos/evmos/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/indexer"
+	"github.com/itxnetwork/itx/v12/rpc/backend/mocks"
+	rpctypes "github.com/itxnetwork/itx/v12/rpc/types"
+	itxtypes "github.com/itxnetwork/itx/v12/types"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmlog "github.com/tendermint/tendermint/libs/log"
 	tmrpctypes "github.com/tendermint/tendermint/rpc/core/types"
@@ -467,7 +467,7 @@ func (suite *BackendTestSuite) TestGetTransactionByTxIndex() {
 		registerMock func()
 		height       int64
 		index        uint
-		expTxResult  *evmostypes.TxResult
+		expTxResult  *itxtypes.TxResult
 		expPass      bool
 	}{
 		{
@@ -479,7 +479,7 @@ func (suite *BackendTestSuite) TestGetTransactionByTxIndex() {
 			},
 			0,
 			0,
-			&evmostypes.TxResult{},
+			&itxtypes.TxResult{},
 			false,
 		},
 	}
@@ -507,7 +507,7 @@ func (suite *BackendTestSuite) TestQueryTendermintTxIndexer() {
 		registerMock func()
 		txGetter     func(*rpctypes.ParsedTxs) *rpctypes.ParsedTx
 		query        string
-		expTxResult  *evmostypes.TxResult
+		expTxResult  *itxtypes.TxResult
 		expPass      bool
 	}{
 		{
@@ -520,7 +520,7 @@ func (suite *BackendTestSuite) TestQueryTendermintTxIndexer() {
 				return &rpctypes.ParsedTx{}
 			},
 			"",
-			&evmostypes.TxResult{},
+			&itxtypes.TxResult{},
 			false,
 		},
 	}
@@ -618,7 +618,7 @@ func (suite *BackendTestSuite) TestGetGasUsed() {
 	testCases := []struct {
 		name                     string
 		fixRevertGasRefundHeight int64
-		txResult                 *evmostypes.TxResult
+		txResult                 *itxtypes.TxResult
 		price                    *big.Int
 		gas                      uint64
 		exp                      uint64
@@ -626,7 +626,7 @@ func (suite *BackendTestSuite) TestGetGasUsed() {
 		{
 			"success txResult",
 			1,
-			&evmostypes.TxResult{
+			&itxtypes.TxResult{
 				Height:  1,
 				Failed:  false,
 				GasUsed: 53026,
@@ -638,7 +638,7 @@ func (suite *BackendTestSuite) TestGetGasUsed() {
 		{
 			"fail txResult before cap",
 			2,
-			&evmostypes.TxResult{
+			&itxtypes.TxResult{
 				Height:  1,
 				Failed:  true,
 				GasUsed: 53026,
@@ -650,7 +650,7 @@ func (suite *BackendTestSuite) TestGetGasUsed() {
 		{
 			"fail txResult after cap",
 			2,
-			&evmostypes.TxResult{
+			&itxtypes.TxResult{
 				Height:  3,
 				Failed:  true,
 				GasUsed: 53026,

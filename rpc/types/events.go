@@ -1,18 +1,18 @@
-// Copyright 2022 Evmos Foundation
-// This file is part of the Evmos Network packages.
+// Copyright 2022 Itx Foundation
+// This file is part of the Itx Network packages.
 //
-// Evmos is free software: you can redistribute it and/or modify
+// Itx is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The Evmos packages are distributed in the hope that it will be useful,
+// The Itx packages are distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Evmos packages. If not, see https://github.com/evmos/evmos/blob/main/LICENSE
+// along with the Itx packages. If not, see https://github.com/itxnetwork/itx/blob/main/LICENSE
 package types
 
 import (
@@ -21,8 +21,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/evmos/evmos/v12/types"
-	evmtypes "github.com/evmos/evmos/v12/x/evm/types"
+	"github.com/itxnetwork/itx/v12/types"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmrpctypes "github.com/tendermint/tendermint/rpc/core/types"
 )
@@ -189,7 +189,7 @@ func (p *ParsedTxs) newTx(attrs []abci.EventAttribute) error {
 
 // updateTx updates an exiting tx from events, called during parsing.
 // In event format 2, we update the tx with the attributes of the second `ethereum_tx` event,
-// Due to bug https://github.com/evmos/ethermint/issues/1175, the first `ethereum_tx` event may emit incorrect tx hash,
+// Due to bug https://github.com/itxnetwork/ethermint/issues/1175, the first `ethereum_tx` event may emit incorrect tx hash,
 // so we prefer the second event and override the first one.
 func (p *ParsedTxs) updateTx(eventIndex int, attrs []abci.EventAttribute) error {
 	tx := NewParsedTx(eventIndex)

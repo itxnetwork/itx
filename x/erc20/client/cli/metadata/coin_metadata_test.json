@@ -1,21 +1,21 @@
 {
   "metadata": [
     {
-      "description": "The native staking and governance token of the Evmos chain",
+      "description": "The native staking and governance token of the Itx chain",
       "denom_units": [
         {
-          "denom": "aevmos",
+          "denom": "aitx",
           "exponent": 0
         },
         {
-          "denom": "evmos",
+          "denom": "itx",
           "exponent": 18
         }
       ],
-      "base": "aevmos",
-      "display": "aevmos",
-      "name": "aevmos",
-      "symbol": "EVMOS"
+      "base": "aitx",
+      "display": "aitx",
+      "name": "aitx",
+      "symbol": "itx"
     }
   ]
 }

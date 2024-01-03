@@ -15,21 +15,21 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/evmos/evmos/v12/app"
-	"github.com/evmos/evmos/v12/app/ante"
-	"github.com/evmos/evmos/v12/encoding"
-	"github.com/evmos/evmos/v12/ethereum/eip712"
-	"github.com/evmos/evmos/v12/testutil"
-	"github.com/evmos/evmos/v12/utils"
-	evmtypes "github.com/evmos/evmos/v12/x/evm/types"
-	feemarkettypes "github.com/evmos/evmos/v12/x/feemarket/types"
+	"github.com/itxnetwork/itx/v12/app"
+	"github.com/itxnetwork/itx/v12/app/ante"
+	"github.com/itxnetwork/itx/v12/encoding"
+	"github.com/itxnetwork/itx/v12/ethereum/eip712"
+	"github.com/itxnetwork/itx/v12/testutil"
+	"github.com/itxnetwork/itx/v12/utils"
+	evmtypes "github.com/itxnetwork/itx/v12/x/evm/types"
+	feemarkettypes "github.com/itxnetwork/itx/v12/x/feemarket/types"
 )
 
 type AnteTestSuite struct {
 	suite.Suite
 
 	ctx             sdk.Context
-	app             *app.Evmos
+	app             *app.Itx
 	clientCtx       client.Context
 	anteHandler     sdk.AnteHandler
 	ethSigner       types.Signer
@@ -41,7 +41,7 @@ type AnteTestSuite struct {
 func (suite *AnteTestSuite) SetupTest() {
 	checkTx := false
 
-	suite.app = app.EthSetup(checkTx, func(app *app.Evmos, genesis simapp.GenesisState) simapp.GenesisState {
+	suite.app = app.EthSetup(checkTx, func(app *app.Itx, genesis simapp.GenesisState) simapp.GenesisState {
 		if suite.enableFeemarket {
 			// setup feemarketGenesis params
 			feemarketGenesis := feemarkettypes.DefaultGenesisState()
@@ -75,7 +75,7 @@ func (suite *AnteTestSuite) SetupTest() {
 	suite.ctx = suite.ctx.WithBlockGasMeter(sdk.NewGasMeter(1000000000000000000))
 	suite.app.EvmKeeper.WithChainID(suite.ctx)
 
-	// set staking denomination to Evmos denom
+	// set staking denomination to Itx denom
 	params := suite.app.StakingKeeper.GetParams(suite.ctx)
 	params.BondDenom = utils.BaseDenom
 	suite.app.StakingKeeper.SetParams(suite.ctx, params)

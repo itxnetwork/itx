@@ -1,4 +1,4 @@
-module github.com/evmos/evmos/v12
+module github.com/itxnetwork/itx/v12
 
 go 1.20
 
@@ -15,7 +15,6 @@ require (
 	github.com/cosmos/ibc-go/v6 v6.1.1
 	github.com/davecgh/go-spew v1.1.1
 	github.com/ethereum/go-ethereum v1.10.26
-	github.com/evmos/evmos-ledger-go v0.3.0-rc0
 	github.com/gogo/protobuf v1.3.3
 	github.com/golang/protobuf v1.5.3
 	github.com/gorilla/mux v1.8.0
@@ -23,6 +22,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/hashicorp/go-version v1.6.0
 	github.com/improbable-eng/grpc-web v0.15.0
+	github.com/itxnetwork/itx-ledger-go v0.3.0
 	github.com/miguelmota/go-ethereum-hdwallet v0.1.1
 	github.com/onsi/ginkgo/v2 v2.9.0
 	github.com/onsi/gomega v1.27.2
@@ -222,9 +222,9 @@ replace (
 	// use cosmos fork of keyring
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.2.0
 	// use Cosmos-SDK fork to enable Ledger functionality
-	github.com/cosmos/cosmos-sdk => github.com/evmos/cosmos-sdk v0.46.13-ledger.3
-	// use Evmos geth fork
-	github.com/ethereum/go-ethereum => github.com/evmos/go-ethereum v1.10.26
+	github.com/cosmos/cosmos-sdk => github.com/itxnetwork/cosmos-sdk v0.46.13-ledger.3
+	// use Itx geth fork
+	github.com/ethereum/go-ethereum => github.com/itxnetwork/go-ethereum v1.10.26
 	// Security Advisory https://github.com/advisories/GHSA-h395-qcrw-5vmq
 	github.com/gin-gonic/gin => github.com/gin-gonic/gin v1.7.7
 	// use cosmos flavored protobufs

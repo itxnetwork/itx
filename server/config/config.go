@@ -1,18 +1,18 @@
-// Copyright 2022 Evmos Foundation
-// This file is part of the Evmos Network packages.
+// Copyright 2022 Itx Foundation
+// This file is part of the Itx Network packages.
 //
-// Evmos is free software: you can redistribute it and/or modify
+// Itx is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The Evmos packages are distributed in the hope that it will be useful,
+// The Itx packages are distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the Evmos packages. If not, see https://github.com/evmos/evmos/blob/main/LICENSE
+// along with the Itx packages. If not, see https://github.com/itxnetwork/itx/blob/main/LICENSE
 package config
 
 import (
@@ -35,10 +35,10 @@ const (
 	DefaultGRPCAddress = "0.0.0.0:9900"
 
 	// DefaultJSONRPCAddress is the default address the JSON-RPC server binds to.
-	DefaultJSONRPCAddress = "127.0.0.1:8545"
+	DefaultJSONRPCAddress = "0.0.0.0:8545"
 
 	// DefaultJSONRPCWsAddress is the default address the JSON-RPC WebSocket server binds to.
-	DefaultJSONRPCWsAddress = "127.0.0.1:8546"
+	DefaultJSONRPCWsAddress = "0.0.0.0:8546"
 
 	// DefaultJsonRPCMetricsAddress is the default address the JSON-RPC Metrics server binds to.
 	DefaultJSONRPCMetricsAddress = "127.0.0.1:6065"
@@ -175,7 +175,7 @@ func AppConfig(denom string) (string, interface{}) {
 	// - if you set srvCfg.MinGasPrices non-empty, validators CAN tweak their
 	//   own app.toml to override, or use this default value.
 	//
-	// In evmos, we set the min gas prices to 0.
+	// In itx, we set the min gas prices to 0.
 	if denom != "" {
 		srvCfg.MinGasPrices = "0" + denom
 	}
